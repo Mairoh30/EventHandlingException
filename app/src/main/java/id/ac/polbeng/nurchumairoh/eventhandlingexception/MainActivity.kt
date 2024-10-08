@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import id.ac.polbeng.nurchumairoh.eventhandlingexception.databinding.ActivityMainBinding
 
 
@@ -22,5 +23,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
         }
+
+        binding.btnDisplayMessage.setOnLongClickListener {
+            Snackbar.make(binding.rootLayout, "Long Click",
+                Snackbar.LENGTH_LONG).show()
+            true
+        }
     }
-    }
+
+}
